@@ -1,0 +1,15 @@
+1. Keystore파일생성
+keytool -genkey -alias knu -keyalg RSA -keystore keystore
+
+2.CSR 추출 및 확인
+keytool -certreq -keyalg RSA -alias knu -file csr.csr -keystore keystore
+
+3.루트 인증서 설치
+keytool -import -alias root -keystore keystore -trustcacerts -file rootca.cer
+
+4.체인 인증서 설치
+keytool -import -alias chain -keystore keystore -trustcacerts -file caChain.cer
+
+5.SSL 인증서 설치
+keytool -import -alias knu -keystore keystore -trustcacerts -file knu.cer
+
