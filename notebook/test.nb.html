@@ -169,33 +169,36 @@ $(document).ready(function () {
 
 
 <!-- rnb-text-begin -->
-<p>This is an <a href="http://rmarkdown.rstudio.com">R Markdown</a> Notebook. When you execute code within the notebook, the results appear beneath the code.</p>
-<p>Try executing this chunk by clicking the <em>Run</em> button within the chunk or by placing your cursor inside it and pressing <em>Ctrl+Shift+Enter</em>.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin -->
-<pre class="r"><code>head(cars)</code></pre>
+<pre class="r"><code>require(installr)
+#check.for.updates.R()
+install.R()</code></pre>
 <!-- rnb-source-end -->
-<div data-pagedtable>
-<script data-pagedtable-source type="application/json">
-{"columns":[{"name":["speed"],"type":["dbl"],"align":["right"]},{"name":["dist"],"type":["dbl"],"align":["right"]}],"data":[{"speed":"4","dist":" 2"},{"speed":"4","dist":"10"},{"speed":"7","dist":" 4"},{"speed":"7","dist":"22"},{"speed":"8","dist":"16"},{"speed":"9","dist":"10"}]}
-  </script>
-</div>
-<!-- rnb-source-begin -->
-<pre class="r"><code>plot(cars)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-plot-begin -->
-<p><img src="data:image/png;base64,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" /></p>
-<!-- rnb-plot-end -->
-<!-- unknown-chunk-output -->
+<!-- rnb-output-begin eyJkYXRhIjoidHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi93aW5kb3dzL2Jhc2UvUi0zLjMuMS13aW4uZXhlJ1xuQ29udGVudCB0eXBlICdhcHBsaWNhdGlvbi94LW1zZG9zLXByb2dyYW0nIGxlbmd0aCA3MzU2NjU0NyBieXRlcyAoNzAuMiBNYilcbm9wZW5lZCBVUkxcbmRvd25sb2FkZWQgNzAuMiBNYlxuIn0= -->
+<pre><code>trying URL 'https://cran.rstudio.com/bin/windows/base/R-3.3.1-win.exe'
+Content type 'application/x-msdos-program' length 73566547 bytes (70.2 Mb)
+opened URL
+downloaded 70.2 Mb</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5UaGUgZmlsZSB3YXMgZG93bmxvYWRlZCBzdWNjZXNmdWxseSBpbnRvOlxuIEM6XFxVc2Vyc1xcYWlyZWRcXEFwcERhdGFcXExvY2FsXFxUZW1wXFxSdG1wR21OOFVtL1ItMy4zLjEtd2luLmV4ZSBcblxuUnVubmluZyB0aGUgaW5zdGFsbGVyIG5vdy4uLlxuXG5JbnN0YWxsYXRpb24gc3RhdHVzOiAgVFJVRSAuIFJlbW92aW5nIHRoZSBmaWxlOlxuIEM6XFxVc2Vyc1xcYWlyZWRcXEFwcERhdGFcXExvY2FsXFxUZW1wXFxSdG1wR21OOFVtL1ItMy4zLjEtd2luLmV4ZSBcbiAoSW4gdGhlIGZ1dHVyZSwgeW91IG1heSBrZWVwIHRoZSBmaWxlIGJ5IHNldHRpbmcga2VlcF9pbnN0YWxsX2ZpbGU9VFJVRSkgXG5bMV0gVFJVRVxuIn0= -->
+<pre><code>
+The file was downloaded succesfully into:
+ C:\Users\aired\AppData\Local\Temp\RtmpGmN8Um/R-3.3.1-win.exe 
+
+Running the installer now...
+
+Installation status:  TRUE . Removing the file:
+ C:\Users\aired\AppData\Local\Temp\RtmpGmN8Um/R-3.3.1-win.exe 
+ (In the future, you may keep the file by setting keep_install_file=TRUE) 
+[1] TRUE</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>Add a new chunk by clicking the <em>Insert Chunk</em> button on the toolbar or by pressing <em>Ctrl+Alt+I</em>.</p>
-<p>When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the <em>Preview</em> button or press <em>Ctrl+Shift+K</em> to preview the HTML file).</p>
-<pre><code>'ss'</code></pre>
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpUaGlzIGlzIGFuIFtSIE1hcmtkb3duXShodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tKSBOb3RlYm9vay4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiANCg0KVHJ5IGV4ZWN1dGluZyB0aGlzIGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqUnVuKiBidXR0b24gd2l0aGluIHRoZSBjaHVuayBvciBieSBwbGFjaW5nIHlvdXIgY3Vyc29yIGluc2lkZSBpdCBhbmQgcHJlc3NpbmcgKkN0cmwrU2hpZnQrRW50ZXIqLiANCg0KYGBge3J9DQpoZWFkKGNhcnMpDQpwbG90KGNhcnMpDQpgYGANCg0KQWRkIGEgbmV3IGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqSW5zZXJ0IENodW5rKiBidXR0b24gb24gdGhlIHRvb2xiYXIgb3IgYnkgcHJlc3NpbmcgKkN0cmwrQWx0K0kqLg0KDQpXaGVuIHlvdSBzYXZlIHRoZSBub3RlYm9vaywgYW4gSFRNTCBmaWxlIGNvbnRhaW5pbmcgdGhlIGNvZGUgYW5kIG91dHB1dCB3aWxsIGJlIHNhdmVkIGFsb25nc2lkZSBpdCAoY2xpY2sgdGhlICpQcmV2aWV3KiBidXR0b24gb3IgcHJlc3MgKkN0cmwrU2hpZnQrSyogdG8gcHJldmlldyB0aGUgSFRNTCBmaWxlKS4NCg0KYGBgDQonc3MnDQpgYGA=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7cn0NCnJlcXVpcmUoaW5zdGFsbHIpDQojY2hlY2suZm9yLnVwZGF0ZXMuUigpDQppbnN0YWxsLlIoKQ0KDQpgYGANCg0K</div>
 
 
 
